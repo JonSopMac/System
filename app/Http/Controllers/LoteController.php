@@ -82,6 +82,7 @@ class LoteController extends Controller
 
         $variedads= Variedad::pluck('nombre','id');
         $fincas= Finca::pluck('nombre','id');
+        
 
         return view('lote.edit', compact('lote','variedads','fincas'));
     }

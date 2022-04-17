@@ -11,10 +11,10 @@
                 <div class="card">
                     <div class="card-header">
                         <div class="float-left">
-                            <span class="card-title">Show Registro</span>
+                            <span class="card-title">Vista de Registro</span>
                         </div>
                         <div class="float-right">
-                            <a class="btn btn-primary" href="{{ route('registros.index') }}"> Back</a>
+                            <a class="btn btn-primary" href="{{ route('registros.index') }}"> Volver</a>
                         </div>
                     </div>
 
@@ -22,7 +22,7 @@
                         
                         <div class="form-group">
                             <strong>Usuarios Id:</strong>
-                            {{ $registro->usuarios_id }}
+                            {{ $registro->usuario->nombre }}
                         </div>
                         <div class="form-group">
                             <strong>Fecha:</strong>
@@ -38,11 +38,11 @@
                         </div>
                         <div class="form-group">
                             <strong>Enfermedads Id:</strong>
-                            {{ $registro->enfermedads_id }}
+                            {{ $registro->enfermedad->nombre }}
                         </div>
                         <div class="form-group">
                             <strong>Lotes Id:</strong>
-                            {{ $registro->lotes_id }}
+                            {{ $registro->lote->nombre }}
                         </div>
 
                     </div>

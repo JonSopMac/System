@@ -32,6 +32,9 @@
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
+
+                    @if(Auth::check())
+
                     <ul class="navbar-nav me-auto">
 
                     <li class="nav-item">
@@ -71,6 +74,8 @@
                     </li>
 
                     </ul>
+
+                    @endif
 
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ms-auto">

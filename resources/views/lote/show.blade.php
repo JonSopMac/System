@@ -11,10 +11,10 @@
                 <div class="card">
                     <div class="card-header">
                         <div class="float-left">
-                            <span class="card-title">Show Lote</span>
+                            <span class="card-title">Vista de Lote</span>
                         </div>
                         <div class="float-right">
-                            <a class="btn btn-primary" href="{{ route('lotes.index') }}"> Back</a>
+                            <a class="btn btn-primary" href="{{ route('lotes.index') }}"> Volver</a>
                         </div>
                     </div>
 
@@ -30,11 +30,11 @@
                         </div>
                         <div class="form-group">
                             <strong>Variedads Id:</strong>
-                            {{ $lote->variedads_id }}
+                            {{ $lote->variedad->nombre }}
                         </div>
                         <div class="form-group">
                             <strong>Fincas Id:</strong>
-                            {{ $lote->fincas_id }}
+                            {{ $lote->finca->nombre }}
                         </div>
 
                     </div>

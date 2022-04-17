@@ -36,12 +36,12 @@
                                     <tr>
                                         <th>No</th>
                                         
-										<th>Usuarios Id</th>
+										<th>Usuario</th>
 										<th>Fecha</th>
 										<th>Linea</th>
 										<th>Palma</th>
-										<th>Enfermedads Id</th>
-										<th>Lotes Id</th>
+										<th>Enfermedad</th>
+										<th>Lote</th>
 
                                         <th></th>
                                     </tr>
@@ -51,12 +51,12 @@
                                         <tr>
                                             <td>{{ ++$i }}</td>
                                             
-											<td>{{ $registro->usuarios_id }}</td>
+											<td>{{ $registro->usuario->nombre }}</td>
 											<td>{{ $registro->fecha }}</td>
 											<td>{{ $registro->linea }}</td>
 											<td>{{ $registro->palma }}</td>
-											<td>{{ $registro->enfermedads_id }}</td>
-											<td>{{ $registro->lotes_id }}</td>
+											<td>{{ $registro->enfermedad->nombre }}</td>
+											<td>{{ $registro->lote->nombre }}</td>
 
                                             <td>
                                                 <form action="{{ route('registros.destroy',$registro->id) }}" method="POST">

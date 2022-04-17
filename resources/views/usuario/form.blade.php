@@ -8,7 +8,7 @@
         </div>
         <div class="form-group">
             {{ Form::label('generos_id') }}
-            {{ Form::text('generos_id', $usuario->generos_id, ['class' => 'form-control' . ($errors->has('generos_id') ? ' is-invalid' : ''), 'placeholder' => 'Generos Id']) }}
+            {{ Form::select('generos_id', $generos, $usuario->generos_id, ['class' => 'form-control' . ($errors->has('generos_id') ? ' is-invalid' : ''), 'placeholder' => 'Generos Id']) }}
             {!! $errors->first('generos_id', '<div class="invalid-feedback">:message</div>') !!}
         </div>
         <div class="form-group">
@@ -18,7 +18,7 @@
         </div>
         <div class="form-group">
             {{ Form::label('cargos_id') }}
-            {{ Form::text('cargos_id', $usuario->cargos_id, ['class' => 'form-control' . ($errors->has('cargos_id') ? ' is-invalid' : ''), 'placeholder' => 'Cargos Id']) }}
+            {{ Form::select('cargos_id', $cargos, $usuario->cargos_id, ['class' => 'form-control' . ($errors->has('cargos_id') ? ' is-invalid' : ''), 'placeholder' => 'Cargos Id']) }}
             {!! $errors->first('cargos_id', '<div class="invalid-feedback">:message</div>') !!}
         </div>
         <div class="form-group">
@@ -28,7 +28,7 @@
         </div>
         <div class="form-group">
             {{ Form::label('rols_id') }}
-            {{ Form::text('rols_id', $usuario->rols_id, ['class' => 'form-control' . ($errors->has('rols_id') ? ' is-invalid' : ''), 'placeholder' => 'Rols Id']) }}
+            {{ Form::select('rols_id', $rols, $usuario->rols_id, ['class' => 'form-control' . ($errors->has('rols_id') ? ' is-invalid' : ''), 'placeholder' => 'Rols Id']) }}
             {!! $errors->first('rols_id', '<div class="invalid-feedback">:message</div>') !!}
         </div>
 

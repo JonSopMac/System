@@ -37,9 +37,9 @@
                                         <th>No</th>
                                         
 										<th>Nombre</th>
-										<th>Anio Siembra</th>
-										<th>Variedads Id</th>
-										<th>Fincas Id</th>
+										<th>Año Siembra</th>
+										<th>Variedad</th>
+										<th>Finca</th>
 
                                         <th></th>
                                     </tr>
@@ -51,8 +51,8 @@
                                             
 											<td>{{ $lote->nombre }}</td>
 											<td>{{ $lote->anio_siembra }}</td>
-											<td>{{ $lote->variedads_id }}</td>
-											<td>{{ $lote->fincas_id }}</td>
+											<td>{{ $lote->variedad->nombre }}</td>
+											<td>{{ $lote->finca->nombre }}</td>
 
                                             <td>
                                                 <form action="{{ route('lotes.destroy',$lote->id) }}" method="POST">

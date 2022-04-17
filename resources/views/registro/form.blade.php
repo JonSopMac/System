@@ -3,7 +3,7 @@
         
         <div class="form-group">
             {{ Form::label('usuarios_id') }}
-            {{ Form::text('usuarios_id', $registro->usuarios_id, ['class' => 'form-control' . ($errors->has('usuarios_id') ? ' is-invalid' : ''), 'placeholder' => 'Usuarios Id']) }}
+            {{ Form::select('usuarios_id',$usuarios, $registro->usuarios_id, ['class' => 'form-control' . ($errors->has('usuarios_id') ? ' is-invalid' : ''), 'placeholder' => 'Usuarios Id']) }}
             {!! $errors->first('usuarios_id', '<div class="invalid-feedback">:message</div>') !!}
         </div>
         <div class="form-group">
@@ -23,12 +23,12 @@
         </div>
         <div class="form-group">
             {{ Form::label('enfermedads_id') }}
-            {{ Form::text('enfermedads_id', $registro->enfermedads_id, ['class' => 'form-control' . ($errors->has('enfermedads_id') ? ' is-invalid' : ''), 'placeholder' => 'Enfermedads Id']) }}
+            {{ Form::select('enfermedads_id', $enfermedads, $registro->enfermedads_id, ['class' => 'form-control' . ($errors->has('enfermedads_id') ? ' is-invalid' : ''), 'placeholder' => 'Enfermedads Id']) }}
             {!! $errors->first('enfermedads_id', '<div class="invalid-feedback">:message</div>') !!}
         </div>
         <div class="form-group">
             {{ Form::label('lotes_id') }}
-            {{ Form::text('lotes_id', $registro->lotes_id, ['class' => 'form-control' . ($errors->has('lotes_id') ? ' is-invalid' : ''), 'placeholder' => 'Lotes Id']) }}
+            {{ Form::select('lotes_id', $lotes, $registro->lotes_id, ['class' => 'form-control' . ($errors->has('lotes_id') ? ' is-invalid' : ''), 'placeholder' => 'Lotes Id']) }}
             {!! $errors->first('lotes_id', '<div class="invalid-feedback">:message</div>') !!}
         </div>
 

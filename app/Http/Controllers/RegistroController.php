@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Registro;
+use App\Models\Usuario;
+use App\Models\Enfermedad;
+use App\Models\Lote;
 use Illuminate\Http\Request;
 
 /**
@@ -32,7 +35,12 @@ class RegistroController extends Controller
     public function create()
     {
         $registro = new Registro();
-        return view('registro.create', compact('registro'));
+
+        $usuarios= Usuario::pluck('nombre','id');
+        $enfermedads= Enfermedad::pluck('nombre','id');
+        $lotes= Lote::pluck('nombre','id');
+
+        return view('registro.create', compact('registro','usuarios','enfermedads','lotes'));
     }
 
     /**
@@ -74,7 +82,11 @@ class RegistroController extends Controller
     {
         $registro = Registro::find($id);
 
-        return view('registro.edit', compact('registro'));
+        $usuarios= Usuario::pluck('nombre','id');
+        $enfermedads= Enfermedad::pluck('nombre','id');
+        $lotes= Lote::pluck('nombre','id');
+
+        return view('registro.edit', compact('registro','usuarios','enfermedads','lotes'));
     }
 
     /**

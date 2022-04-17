@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Lote;
+use App\Models\Variedad;
+use App\Models\Finca;
 use Illuminate\Http\Request;
 
 /**
@@ -32,7 +34,11 @@ class LoteController extends Controller
     public function create()
     {
         $lote = new Lote();
-        return view('lote.create', compact('lote'));
+
+        $variedads= Variedad::pluck('nombre','id');
+        $fincas= Finca::pluck('nombre','id');
+
+        return view('lote.create', compact('lote','variedads','fincas'));
     }
 
     /**
@@ -74,7 +80,10 @@ class LoteController extends Controller
     {
         $lote = Lote::find($id);
 
-        return view('lote.edit', compact('lote'));
+        $variedads= Variedad::pluck('nombre','id');
+        $fincas= Finca::pluck('nombre','id');
+
+        return view('lote.edit', compact('lote','variedads','fincas'));
     }
 
     /**

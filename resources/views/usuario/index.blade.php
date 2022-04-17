@@ -37,11 +37,11 @@
                                         <th>No</th>
                                         
 										<th>Nombre</th>
-										<th>Generos Id</th>
+										<th>Genero</th>
 										<th>Fecha Nacimiento</th>
-										<th>Cargos Id</th>
+										<th>Cargo</th>
 										<th>Fecha Ingreso</th>
-										<th>Rols Id</th>
+										<th>Rol</th>
 
                                         <th></th>
                                     </tr>
@@ -52,11 +52,11 @@
                                             <td>{{ ++$i }}</td>
                                             
 											<td>{{ $usuario->nombre }}</td>
-											<td>{{ $usuario->generos_id }}</td>
+											<td>{{ $usuario->genero->nombre }}</td>
 											<td>{{ $usuario->fecha_nacimiento }}</td>
-											<td>{{ $usuario->cargos_id }}</td>
+											<td>{{ $usuario->cargo->nombre }}</td>
 											<td>{{ $usuario->fecha_ingreso }}</td>
-											<td>{{ $usuario->rols_id }}</td>
+											<td>{{ $usuario->rol->nombre }}</td>
 
                                             <td>
                                                 <form action="{{ route('usuarios.destroy',$usuario->id) }}" method="POST">

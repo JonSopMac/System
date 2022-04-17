@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Usuario;
+use App\Models\Genero;
+use App\Models\Cargo;
+use App\Models\Rol;
 use Illuminate\Http\Request;
 
 /**
@@ -32,7 +35,14 @@ class UsuarioController extends Controller
     public function create()
     {
         $usuario = new Usuario();
-        return view('usuario.create', compact('usuario'));
+
+        $generos= Genero::pluck('nombre','id');
+        $cargos= Cargo::pluck('nombre','id');
+        $rols= Rol::pluck('nombre','id');
+
+
+
+        return view('usuario.create', compact('usuario','generos','cargos','rols'));
     }
 
     /**
@@ -74,7 +84,13 @@ class UsuarioController extends Controller
     {
         $usuario = Usuario::find($id);
 
-        return view('usuario.edit', compact('usuario'));
+        $generos= Genero::pluck('nombre','id');
+        $cargos= Cargo::pluck('nombre','id');
+        $rols= Rol::pluck('nombre','id');
+
+
+
+        return view('usuario.edit', compact('usuario','generos','cargos','rols'));
     }
 
     /**

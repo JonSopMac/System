@@ -13,7 +13,7 @@
         </div>
         <div class="form-group">
             {{ Form::label('fecha_nacimiento') }}
-            {{ Form::text('fecha_nacimiento', $usuario->fecha_nacimiento, ['class' => 'form-control' . ($errors->has('fecha_nacimiento') ? ' is-invalid' : ''), 'placeholder' => 'Fecha Nacimiento']) }}
+            {{ Form::date('fecha_nacimiento', $usuario->fecha_nacimiento, ['class' => 'form-control' . ($errors->has('fecha_nacimiento') ? ' is-invalid' : ''), 'placeholder' => 'Fecha Nacimiento']) }}
             {!! $errors->first('fecha_nacimiento', '<div class="invalid-feedback">:message</div>') !!}
         </div>
         <div class="form-group">
@@ -23,7 +23,7 @@
         </div>
         <div class="form-group">
             {{ Form::label('fecha_ingreso') }}
-            {{ Form::text('fecha_ingreso', $usuario->fecha_ingreso, ['class' => 'form-control' . ($errors->has('fecha_ingreso') ? ' is-invalid' : ''), 'placeholder' => 'Fecha Ingreso']) }}
+            {{ Form::date('fecha_ingreso', $usuario->fecha_ingreso, ['class' => 'form-control' . ($errors->has('fecha_ingreso') ? ' is-invalid' : ''), 'placeholder' => 'Fecha Ingreso']) }}
             {!! $errors->first('fecha_ingreso', '<div class="invalid-feedback">:message</div>') !!}
         </div>
         <div class="form-group">

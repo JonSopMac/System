@@ -14,11 +14,7 @@ use Illuminate\Http\Request;
  */
 class UsuarioController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function index()
     {
         $usuarios = Usuario::paginate();
@@ -27,11 +23,6 @@ class UsuarioController extends Controller
             ->with('i', (request()->input('page', 1) - 1) * $usuarios->perPage());
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function create()
     {
         $usuario = new Usuario();
@@ -45,12 +36,6 @@ class UsuarioController extends Controller
         return view('usuario.create', compact('usuario','generos','cargos','rols'));
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
         request()->validate(Usuario::$rules);
@@ -61,12 +46,6 @@ class UsuarioController extends Controller
             ->with('success', 'Usuario created successfully.');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int $id
-     * @return \Illuminate\Http\Response
-     */
     public function show($id)
     {
         $usuario = Usuario::find($id);
@@ -74,12 +53,6 @@ class UsuarioController extends Controller
         return view('usuario.show', compact('usuario'));
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int $id
-     * @return \Illuminate\Http\Response
-     */
     public function edit($id)
     {
         $usuario = Usuario::find($id);
@@ -93,13 +66,6 @@ class UsuarioController extends Controller
         return view('usuario.edit', compact('usuario','generos','cargos','rols'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request $request
-     * @param  Usuario $usuario
-     * @return \Illuminate\Http\Response
-     */
     public function update(Request $request, Usuario $usuario)
     {
         request()->validate(Usuario::$rules);
@@ -110,11 +76,6 @@ class UsuarioController extends Controller
             ->with('success', 'Usuario updated successfully');
     }
 
-    /**
-     * @param int $id
-     * @return \Illuminate\Http\RedirectResponse
-     * @throws \Exception
-     */
     public function destroy($id)
     {
         $usuario = Usuario::find($id)->delete();
